@@ -1,23 +1,17 @@
-import React, {useState} from 'react';
-import './App.css';
-
-//Importing components
-import Form from './components/Form'
-import TodoList from './components/TodoList'
+import React, { useState } from "react";
+import "./App.css";
+import Row from "./components/Row";
+import requests from "./requests";
 
 function App() {
-  const [inputText, setInputText] = useState("");
-  const [todos, setTodos] = useState([]);
-  
-
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Reasses TODO List</h1>
-      
-      </header>
-      <Form todos={todos} inputText={inputText} setTodos={setTodos} setInputText={setInputText}/>
-      <TodoList/>
+      <Row title="Te1" fetchUrl={requests.fetchNetFlixOriginals} />
+      {/* <Row title="Te1" fetchUrl={requests.fetchTrending} />
+      <Row title="Te1" fetchUrl={requests.fetchTrending} />
+      <Row title="Te1" fetchUrl={requests.fetchTrending} />
+      <Row title="Te1" fetchUrl={requests.fetchTrending} />
+      <Row title="Te1" fetchUrl={requests.fetchTrending} /> */}
     </div>
   );
 }
